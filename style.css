@@ -92,3 +92,49 @@ img{
     display: table;
 }
 /* --------------- /базовые настройки ---------*/
+header{
+	background-color: #292929;
+	overflow: hidden;
+
+}
+.center-block{
+	margin: 0 auto;
+	max-width: 990px;
+}
+.logo{
+	float: left;
+	margin-top: 40px;
+}
+.menu{
+	float: right;
+}
+.menu li{
+font-weight: 600;
+float:left;
+}
+.menu a {
+	text-decoration: none;
+
+	color: #fff;
+	padding: 50px 35px;
+	display: block;
+		border-bottom: 3px solid #292929; /*чтобы не прыгало меню при наведении*/
+	border-right: 6px solid #1d1d1d;
+}
+.menu li:first-child{
+	border-left: 1px solid #1d1d1d;
+}
+.menu a:hover{
+	border-bottom: 6px solid #58c93a;
+	color:#58c93a;
+	}
+main{
+	float:left;
+	width: 67%; /*620 ширина блока/990 ширина макета *100%=62% */
+	margin-top:80px;
+}
+aside{
+	margin-top:80px;
+	float: right;
+	width: 26%/*праваЯ граница -левая/общую ширину блока*/
+}
