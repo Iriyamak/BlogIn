@@ -2,6 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
+<!--для применния медиа устройствами - метатег-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="css/style.css"/>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&amp;subset=cyrillic" rel="stylesheet">
 <title>BlogIn</title>
@@ -21,14 +23,18 @@
   <div class="center-block content">
     <main>
       <article>
-        <header> <img src="images/img1.jpg" alt="">  </header>
+        <header>
+          <img src="images/img1.jpg" alt="">
+          <p class="publish">Published by  23.01.2017</p>
+        </header>
         <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
-        <p> <a href="#" class="more"> Continue reading</a> </p>
+        <p><a href="#" class="more">Continue reading</a></p>
       </article>
       <article>
-        <header> <img src="images/img2.jpg" alt="">  </header>
+        <header> <img src="images/img2.jpg" alt="">
+        <p class="publish">Published by  23.01.2017</p></header>
         <h2>DUIS AUTE IRURE DOLOR IN HENDERIT IN VOLUPTATE.</h2>
         <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipop ex ea commo doconsequat, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
@@ -42,6 +48,8 @@
       </div>
       <div class="widget">
         <h2>Categories</h2>
+        <canvas id="myCanvas">
+          <p>Anything in here will be replaced on browsers that support the canvas element</p>
           <nav>
             <ul>
               <li> <a href="#">Weekend</a></li>
@@ -50,6 +58,7 @@
               <li> <a href="#">Holiday</a></li>
             </ul>
           </nav>
+        </canvas>
       </div>
       <div class="widget">
         <h2>Stay tuned</h2>
@@ -75,5 +84,18 @@
       <p>&copy; 2016 Blogin.com - All Rights Reserved - Find more free Templates at <b>Pixelhint.com</b></p>
     </div>
   </footer>
+  <script type="text/javascript" src="js/tagcanvas.js"></script>
+<script type="text/javascript">
+  window.onload = function() {
+    TagCanvas.textColour = '#3f7a3e';
+  TagCanvas.outlineColour = '#fff';
+    try {
+      TagCanvas.Start('myCanvas');
+    } catch(e) {
+      // something went wrong, hide the canvas container
+      document.getElementById('myCanvasContainer').style.display = 'none';
+    }
+  };
+ </script>
 </body>
 </html>

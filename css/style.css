@@ -144,6 +144,25 @@ main{
 		article>header{
 			margin-bottom: 10px;
 			font-size: 0; /* убираем проствет после картинки*/
+			position: relative;
+		}
+		article>header img{
+			width: 100%;
+		}
+		.publish{
+			font-size:13px;
+			background: rgba(0,0,0,0.6);
+			color:#fff;
+			position: absolute;/*отображение блока при наведении на картинке*/
+			bottom: 0px;
+			padding: 10px;
+			text-align: center;
+			width: 100%;
+			box-sizing: border-box;
+			display: none;
+					}
+		article>header:hover .publish{
+			display: block;
 		}
 		article>h2{
 			font-size: 1.75em;
@@ -168,10 +187,16 @@ main{
 				padding: 7px 18px;
 				display: inline-block;
 				letter-spacing: 1.05px;
+				-webkit-transition: all .3s linear;
+				-moz-transition: all .3s linear;
+				transition: all .3s linear;
 			}
 			a.more:hover {
 				color: #339933;
 				border-color: #339933;
+				-webkit-box-shadow: -4px -2px 11px 0px rgba(71, 136, 83, 0.78);
+				-moz-box-shadow:    -4px -2px 11px 0px rgba(71, 136, 83, 0.78);
+				box-shadow:         -4px -2px 11px 0px rgba(71, 136, 83, 0.78);
 			}
 aside{
 	margin-top:80px;
@@ -207,12 +232,16 @@ aside{
 			padding: 16px 20px;
 			width: 100%;
 			border: 1px solid #e1e0e0;
-			border-right:  none;
+			border-right: none;
+		}
+		.search:focus,
+		.subscr-input:focus{
+			border-bottom-color: #3f7a3e;
 		}
 		.widget>nav{
 			margin-left:20px;
 			text-decoration: underline;
-		}
+				}
 		.subscribe{
 			position: relative;/*Позиционируем, чтобы при любом разрешении экрана форма с кнопкой оставались в таком же виде*/
 			width: 100%;
@@ -260,3 +289,60 @@ footer{
 	footer p{
 		letter-spacing: 1px;
 	}
+
+
+@media screen and (max-width:768px) {
+	.logo{
+		margin-top: 15px;
+	}
+	.menu li a{
+		padding: 20px 25px;
+	}
+	main {
+		float: none;
+		width: 100%;
+		margin-top: 20px;
+	}
+	.content{
+		display: flex;
+		flex-flow: column;
+	}
+	.pager{
+		order: 1;
+			}
+	aside {
+		float: none;
+		width: 100%;
+		order: 2;
+	}
+}
+
+
+@media screen and (max-width:620px){
+	.logo{
+		float: none;
+		display: block;
+		margin: 10px auto;
+	}
+	.main-header>.center-block{
+		border-bottom: none;
+	}
+		.menu {
+		float: none;
+		width: 100%;
+		}
+		.menu li a{
+			float: none;
+			padding: 10px;
+		}
+		.content{
+			display: flex;
+			flex-flow: column;
+		}
+		.pager{
+			order: 1;
+		}
+		aside{
+			order: 2;
+		}
+}
